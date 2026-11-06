@@ -9,7 +9,7 @@
 
 * **Team Name:** **TEAM TISSOT**  
 * **GitHub Repository:** [https://github.com/SubbaReddyK-18/food-hub](https://github.com/SubbaReddyK-18/food-hub)  
-* **Live Deployment Link:** `[Insert Deployed URL Here - e.g., https://food-hub-three.vercel.app]`
+* **Live Deployment Link:** [https://foodhub-dusky-psi.vercel.app/](https://foodhub-dusky-psi.vercel.app/)
 
 | S.No | Team Member Name | Registration Number | Role / Key Contribution |
 | :---: | :--- | :--- | :--- |
@@ -226,7 +226,7 @@ npm start
    - `MONGODB_DB`: `foodhub`
    - `JWT_SECRET`: Any random secure secret string
 4. Click **Deploy**. Vercel will build the React Vite frontend and automatically deploy `/api/*` endpoints as serverless functions.
-5. Copy your live deployment URL (e.g., `https://food-hub-three.vercel.app`) and paste it into the **Team Information** section above.
+5. **Live Deployed Application:** [https://foodhub-dusky-psi.vercel.app/](https://foodhub-dusky-psi.vercel.app/)
 
 ---
 
