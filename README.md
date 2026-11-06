@@ -1,158 +1,248 @@
-# 🍔 FoodHub – Frontend-First Gourmet Food Ordering Application
+# 🍔 FoodHub – MERN Stack Gourmet Food Ordering & Delivery Application
 
-FoodHub is a modern, responsive, high-performance food delivery web application built with **React**, **Vite**, **Tailwind CSS**, **React Router DOM**, and **MongoDB Atlas** powered by minimal **Vercel Serverless Functions**.
-
----
-
-## 🌟 Key Features
-
-### 🛍️ Customer Experience
-- **Interactive Home Page**: Hero showcase, dynamic food search, category pills, special discounts banner, popular dishes, chef recommendations, and customer testimonials.
-- **Categorized Menu**: Filter by food category (Burgers, Pizza, Pasta, Asian, Bowls, Sides, Desserts, Beverages), pure vegetarian vs. non-vegetarian toggle, and real-time price & rating sorting.
-- **Food Details**: High-resolution imagery, dietary indicators, estimated preparation time, dynamic quantity selector, and related dish recommendations.
-- **Shopping Cart**: Real-time quantity manipulation, item removal, automatic subtotal calculation, free delivery thresholds ($40+), 8% tax calculation, and coupon codes (`WELCOME30`, `FOODHUB10`).
-- **Streamlined Checkout**: Customer contact details, delivery address with apartment & notes, Cash on Delivery (COD) payment flow, and instant order placement.
-- **Order History & Real-Time Status**: View past and active orders with delivery address, itemized breakdown, and status progression (`Placed` ➔ `Preparing` ➔ `On the way` ➔ `Delivered`).
-- **User Authentication**: Secure customer & admin registration, login with JWT tokens, and quick 1-click demo login buttons.
-
-### 🛡️ Admin Control Portal
-- **Real-Time Analytics**: Total revenue, total orders placed, active menu items, and average order value.
-- **Food Catalog Management (CRUD)**:
-  - Add new dishes with image URLs, descriptions, categories, prices, and veg/non-veg status.
-  - Live edit dishes directly from the dashboard.
-  - Delete retired menu items with confirmation safeguards.
-- **Order Fulfillment**: Track customer delivery addresses, items ordered, and update order status (`Placed` ➔ `Preparing` ➔ `On the way` ➔ `Delivered` ➔ `Cancelled`).
+> **MERN Stack Web Development Training Program – Final Capstone Project**  
+> A full-stack, responsive, high-performance gourmet food ordering web application with customer ordering workflows, live order tracking, and an administrative control portal.
 
 ---
 
-## 🏗️ Architecture
+## 👥 Team Information
 
-```
-React (Vite + Tailwind CSS)
-          │
-          ▼
-Minimal Serverless Functions (/api/*)
-          │
-          ▼
-   MongoDB Atlas
-```
+| S.No | Team Member Name | Registration Number | Role / Key Contribution |
+| :---: | :--- | :--- | :--- |
+| **1** | **[Member 1 Name]** | `[REG_NO_1]` | Frontend Development (React.js, Tailwind CSS, UI/UX) |
+| **2** | **[Member 2 Name]** | `[REG_NO_2]` | Backend API & Routing (Node.js, Express.js, Auth) |
+| **3** | **[Member 3 Name]** | `[REG_NO_3]` | Database Architecture & Integration (MongoDB Atlas, Seeding) |
 
-- **No bloated Express server** or continuous Node.js backend.
-- High efficiency, low latency serverless database operations.
-- Clean separation between frontend components, context state, and minimal API endpoints.
+* **Team Name:** `[Your Team Name - e.g., ByteCrafters / FullStackForce / CodeCravers]`  
+* **GitHub Repository:** [https://github.com/SubbaReddyK-18/food-hub](https://github.com/SubbaReddyK-18/food-hub)  
+* **Live Deployment Link:** `[Insert Deployed URL Here - e.g., https://food-hub-three.vercel.app]`
 
 ---
 
-## 📂 Project Structure
+## 📖 Project Overview
+
+**FoodHub** is an end-to-end full-stack web application designed to simulate modern food delivery services like DoorDash, Zomato, and UberEats. It bridges the gap between food lovers seeking artisanal gourmet dishes and restaurant managers tracking live kitchen orders.
+
+The application incorporates a rich frontend built with React and Tailwind CSS, an Express.js and Node.js REST API layer, and a robust MongoDB database supporting comprehensive CRUD capabilities, secure JWT authentication, role-based authorization, and real-time status progression.
+
+---
+
+## 🎯 Project Objectives
+
+1. **Full-Stack MERN Integration:** Establish seamless communication between React frontend, Express/Node backend, and MongoDB database.
+2. **Comprehensive CRUD Operations:** Enable full lifecycle data management for food menu items, customer carts, and active customer orders.
+3. **Role-Based Access Control (RBAC):** Provide distinct interfaces and permissions for regular customers vs. administrative staff.
+4. **Intuitive Customer Experience:** Deliver dynamic search, dietary filters (Veg / Non-Veg), category-based navigation, cart management, promo codes, and Cash on Delivery (COD) checkout.
+5. **Kitchen & Order Management:** Give administrators real-time analytical KPIs (revenue, order counts, average order values) and status fulfillment tools (`Placed` ➔ `Preparing` ➔ `On the way` ➔ `Delivered`).
+6. **Production-Ready Deployment:** Deploy the entire stack to the cloud with live database connectivity and continuous availability.
+
+---
+
+## 💻 Technologies Used (MERN Stack)
+
+| Layer | Technology | Purpose & Details |
+| :--- | :--- | :--- |
+| **M – Database** | **MongoDB (Atlas & Compass)** | NoSQL document database storing user accounts, food menu catalogs, and customer orders with high availability. |
+| **E – Backend Framework** | **Express.js** | Lightweight web application framework handling RESTful routing, CORS, JWT middleware, and API controllers. |
+| **R – Frontend Library** | **React.js 18 (Vite)** | Fast single-page application (SPA) with responsive UI built using **Tailwind CSS**, **Lucide React** icons, and **React Router DOM**. |
+| **N – Runtime Environment** | **Node.js 20+** | Scalable JavaScript runtime executing server-side logic and database operations. |
+
+### Additional Libraries & Tools
+- **State Management:** React Context API (`AuthContext`, `CartContext`)
+- **Authentication:** `jsonwebtoken` (JWT) and `bcryptjs` for secure password hashing
+- **Styling:** Tailwind CSS with PostCSS & Autoprefixer
+- **Presentation:** PowerPoint slides generated with `pptxgenjs` (`FoodHub_Project_Presentation.pptx`)
+
+---
+
+## 🔄 CRUD Operations Matrix
+
+The application strictly implements **Create, Read, Update, and Delete** operations across its core modules:
+
+| Module | Create (POST) | Read (GET) | Update (PUT/PATCH) | Delete (DELETE) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Food Dishes** | Admin adds new dishes with images, description, price, & category | Customers/Admin browse menu, filter by category/veg, view dish details | Admin edits dish price, name, category, or description in real-time | Admin deletes retired dishes from the catalog |
+| **Customer Orders** | Customer places a new COD order at checkout | View past and active orders in Order History & Admin order fulfillment | Admin updates live order status (`Placed` ➔ `Preparing` ➔ `Delivered`) | Customer or Admin cancels an order |
+| **User Authentication** | New user registers (Customer or Admin) | Fetch user profile via token verification (`/api/auth/me`) | Update user profile and address details | Admin manages user accounts |
+| **Shopping Cart** | Add dishes to cart with selected quantity | View itemized cart, subtotal, 8% tax, and shipping fee | Increase/decrease quantity with real-time recalculation | Remove single item or clear entire cart |
+
+---
+
+## 🌟 Features and Functionalities
+
+### 🛍️ 1. Customer Portal
+- **Hero & Landing Page:** Interactive showcase with quick search, chef recommendations, popular dishes, and testimonials.
+- **Categorized Menu Catalog:** Filter by category (*Burgers, Pizza, Pasta, Asian, Bowls, Sides, Desserts, Beverages*).
+- **Dietary Filter:** Instant toggle for **Pure Vegetarian** dishes.
+- **Food Details Page:** High-resolution photography, dietary indicators, prep time, and dynamic quantity selector.
+- **Dynamic Shopping Cart:** Free delivery threshold ($40+), 8% tax calculation, and coupon codes (`WELCOME30`, `FOODHUB10`).
+- **Smooth Checkout:** Delivery address with apartment & driver notes, Cash on Delivery confirmation, and instant order creation.
+- **Live Order Status Tracker:** Real-time visual progress tracker (`Placed` ➔ `Preparing` ➔ `On the way` ➔ `Delivered`).
+- **Authentication:** Register and login with secure JWT tokens, plus **1-click quick demo login buttons**.
+
+### 🛡️ 2. Admin Control Portal
+- **Dashboard Analytics:** Live summary cards displaying Total Revenue, Total Orders Placed, Active Dishes, and Average Order Value.
+- **Food Catalog Management (CRUD):** Add new food items, live inline edit existing dishes, and delete retired menu items.
+- **Order Fulfillment Board:** Track customer delivery addresses, customer phone numbers, itemized breakdown, and update dispatch status.
+
+---
+
+## 🏗️ System Architecture
 
 ```text
-foodhub/
-│
-├── api/                             # Minimal Vercel Serverless Functions
-│   ├── _lib/
-│   │   ├── db.js                    # MongoDB Atlas connection pool
-│   │   └── auth.js                  # JWT & bcrypt authentication helpers
-│   ├── foods/
-│   │   ├── index.js                 # GET all foods, POST new food (Admin)
-│   │   └── [id].js                  # GET, PUT, DELETE food by ID
-│   ├── auth/
-│   │   ├── register.js              # User registration
-│   │   ├── login.js                 # User login
-│   │   └── me.js                    # Token verification
-│   ├── cart/
-│   │   └── index.js                 # Customer cart sync
-│   └── orders/
-│       ├── index.js                 # POST order, GET all orders (Admin), PATCH status
-│       └── my.js                    # GET user order history
-│
-├── src/
-│   ├── components/
-│   │   ├── Navbar.jsx               # Responsive navigation with badge & profile
-│   │   ├── Footer.jsx               # Footer with links and contact info
-│   │   ├── FoodCard.jsx             # Reusable food card with veg badge & hover effects
-│   │   ├── SearchBar.jsx            # Instant search input with clear trigger
-│   │   ├── CategoryList.jsx         # Horizontal scrollable category pills
-│   │   └── CartItem.jsx             # Cart row with +/- controls and delete
-│   │
-│   ├── pages/
-│   │   ├── Home.jsx                 # Complete landing page
-│   │   ├── Menu.jsx                 # Filterable menu catalog
-│   │   ├── FoodDetails.jsx          # Dish detail and quantity picker
-│   │   ├── Cart.jsx                 # Shopping cart with promo codes
-│   │   ├── Checkout.jsx             # Address and COD confirmation
-│   │   ├── Orders.jsx               # Order history & status tracking
-│   │   ├── Login.jsx                # Login with quick 1-click demo accounts
-│   │   ├── Register.jsx             # Registration with customer/admin role
-│   │   └── AdminDashboard.jsx       # Complete Admin CRUD & Order management
-│   │
-│   ├── context/
-│   │   ├── AuthContext.jsx          # User auth state and token persistence
-│   │   └── CartContext.jsx          # Shopping cart state, fees, calculations
-│   │
-│   ├── services/
-│   │   ├── api.js                   # Client API abstraction with offline fallback
-│   │   └── foodData.js              # Seed data catalog with Unsplash food assets
-│   │
-│   ├── App.jsx                      # App routing configuration
-│   ├── main.jsx                     # Entry point
-│   └── index.css                    # Tailwind CSS and custom typography styles
-│
-├── scripts/
-│   └── seed.js                      # MongoDB Atlas seed script
-├── .env.example
-├── package.json
-├── tailwind.config.js
-├── vite.config.js
-└── README.md
+┌────────────────────────────────────────────────────────┐
+│             React Single Page Application              │
+│       (Vite + Tailwind CSS + React Router DOM)         │
+└───────────────────────────┬────────────────────────────┘
+                            │
+               RESTful HTTP Requests (JSON)
+                            │
+┌───────────────────────────▼────────────────────────────┐
+│                  Express.js / Node.js                  │
+│  (Auth Middleware, JWT Verification, Route Controllers)│
+└───────────────────────────┬────────────────────────────┘
+                            │
+              Mongoose / MongoDB Native Driver
+                            │
+┌───────────────────────────▼────────────────────────────┐
+│              MongoDB Database (Atlas / Compass)        │
+│          Collections: `users`, `foods`, `orders`       │
+└────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## ⚙️ Environment Variables
+## 📂 Project Folder Structure
+
+```text
+food-hub/
+├── api/                           # Vercel Serverless Function Endpoints
+│   ├── _lib/
+│   │   ├── auth.js                # JWT verification & bcrypt hashing
+│   │   └── db.js                  # MongoDB Atlas connection pooling
+│   ├── auth/                      # Register, Login, Me endpoints
+│   ├── foods/                     # Food CRUD endpoints
+│   └── orders/                    # Order placement & fulfillment endpoints
+├── scripts/
+│   ├── seed.js                    # MongoDB database seeder script
+│   └── inspect-db.js              # Database diagnostics utility
+├── server/                        # Express.js Standalone Backend Server
+│   ├── routes/
+│   │   ├── auth.js                # Auth routes
+│   │   ├── foods.js               # Food catalog CRUD routes
+│   │   ├── orders.js              # Order routes
+│   │   └── test.js                # Health & DB diagnostic routes
+│   ├── db.js                      # MongoDB connection handler
+│   └── index.js                   # Express server entry point (port 5000)
+├── src/                           # React Frontend Application
+│   ├── components/                # Reusable UI (Navbar, Footer, FoodCard, SearchBar)
+│   ├── context/                   # Global State (AuthContext, CartContext)
+│   ├── pages/                     # App Pages (Home, Menu, Cart, Checkout, Orders, Admin)
+│   ├── services/                  # API client service & fallback mock data
+│   ├── App.jsx                    # Route definitions
+│   └── main.jsx                   # React DOM root
+├── FoodHub_Presentation.html      # Interactive HTML presentation
+├── FoodHub_Project_Presentation.pptx # 10-slide PowerPoint presentation
+├── .env.example                   # Environment variables template
+├── package.json                   # Project scripts and dependencies
+├── tailwind.config.js             # Tailwind CSS configuration
+├── vite.config.js                 # Vite build & proxy configuration
+└── README.md                      # Complete project documentation
+```
+
+---
+
+## ⚙️ Environment Configuration
 
 Create a `.env` file in the project root:
 
 ```env
-MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.your-subdomain.mongodb.net/?retryWrites=true&w=majority
-MONGODB_DB=foodhub
-JWT_SECRET=your_super_secret_jwt_key
-```
+# MongoDB Connection String (Atlas Cloud or Local Compass)
+MONGODB_URI=mongodb://127.0.0.1:27017/foodhub
+# or for MongoDB Atlas:
+# MONGODB_URI=mongodb+srv://<user>:<password>@cluster0.mongodb.net/?retryWrites=true&w=majority
 
-> **Note**: In local Vite mode, the frontend is already pre-configured to automatically use fallback data so you can preview, browse, test cart, checkout, and admin features immediately!
+MONGODB_DB=foodhub
+JWT_SECRET=your_super_secret_jwt_key_2026
+PORT=5000
+```
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Installation & Execution Steps
 
-### 1. Install Dependencies
+### 1. Clone the Repository
+```bash
+git clone https://github.com/SubbaReddyK-18/food-hub.git
+cd food-hub
+```
+
+### 2. Install Dependencies
 ```bash
 npm install
 ```
 
-### 2. Run the Development Server
-```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### 3. Seed MongoDB Atlas Database
-Once you add your `MONGODB_URI` to `.env`:
+### 3. Seed the Database
+Ensure your MongoDB instance is running (locally or on MongoDB Atlas), then populate default dishes and accounts:
 ```bash
 npm run seed
 ```
-This populates the `foods` collection with artisan dishes and creates default test accounts:
-- **Admin**: `admin@foodhub.com` / `admin123`
-- **Customer**: `customer@foodhub.com` / `customer123`
+> **Default Test Accounts:**
+> - **Admin:** `admin@foodhub.com` / `admin123`
+> - **Customer:** `customer@foodhub.com` / `customer123`
+
+### 4. Run the Application
+
+#### Option A: Full-Stack Mode (Express Backend + React Frontend)
+* **Terminal 1 (Backend):**
+  ```bash
+  npm run server
+  ```
+  *Server starts at `http://localhost:5000`*
+
+* **Terminal 2 (Frontend):**
+  ```bash
+  npm run dev
+  ```
+  *Frontend starts at `http://localhost:3000`*
+
+#### Option B: Production Single-Server Mode
+```bash
+npm run build
+npm start
+```
+*Access the unified full-stack application at `http://localhost:5000`*
 
 ---
 
-## 🌐 Deploy to Vercel
+## 🌐 Deployment Instructions
 
-1. Push your repository to GitHub.
-2. Import the project into your [Vercel Dashboard](https://vercel.com).
-3. In **Project Settings** ➔ **Environment Variables**, configure:
-   - `MONGODB_URI`: Your MongoDB Atlas URI
+### Deploy to Vercel (Frontend + Serverless Backend)
+1. Push this repository to GitHub.
+2. Sign in to [Vercel](https://vercel.com) and click **"Add New Project"** ➔ Import `SubbaReddyK-18/food-hub`.
+3. In **Settings ➔ Environment Variables**, add:
+   - `MONGODB_URI`: Your MongoDB Atlas connection URI
    - `MONGODB_DB`: `foodhub`
-   - `JWT_SECRET`: A secure random secret string
-4. Click **Deploy**. Vercel will build the React Vite frontend and automatically deploy `/api/*` as serverless functions.
+   - `JWT_SECRET`: Any random secure secret string
+4. Click **Deploy**. Vercel will build the React Vite frontend and automatically deploy `/api/*` endpoints as serverless functions.
+5. Copy your live deployment URL (e.g., `https://food-hub-three.vercel.app`) and paste it into the **Team Information** section above.
 
+---
+
+## 📊 Project Presentation
+
+The required 10-slide project presentation is available in this repository:
+- 📑 **PowerPoint Presentation:** [`FoodHub_Project_Presentation.pptx`](./FoodHub_Project_Presentation.pptx)
+- 🌐 **Interactive Web Slides:** [`FoodHub_Presentation.html`](./FoodHub_Presentation.html)
+
+**Slide Breakdown:**
+1. Title Slide (Project Title, Team Members, Registration Numbers)
+2. Introduction & Background
+3. Problem Statement
+4. Project Objectives
+5. MERN Stack Technologies Used
+6. System Modules (Customer, Cart, Order, Admin)
+7. System Architecture & Workflow Diagram
+8. Database Schema & Collections Design
+9. Implementation & Screenshots
+10. Conclusion & Future Enhancements
