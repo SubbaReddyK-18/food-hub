@@ -7,15 +7,16 @@
 
 ## 👥 Team Information
 
-| S.No | Team Member Name | Registration Number | Role / Key Contribution |
-| :---: | :--- | :--- | :--- |
-| **1** | **[Member 1 Name]** | `[REG_NO_1]` | Frontend Development (React.js, Tailwind CSS, UI/UX) |
-| **2** | **[Member 2 Name]** | `[REG_NO_2]` | Backend API & Routing (Node.js, Express.js, Auth) |
-| **3** | **[Member 3 Name]** | `[REG_NO_3]` | Database Architecture & Integration (MongoDB Atlas, Seeding) |
-
-* **Team Name:** `[Your Team Name - e.g., ByteCrafters / FullStackForce / CodeCravers]`  
+* **Team Name:** **TEAM TISSOT**  
 * **GitHub Repository:** [https://github.com/SubbaReddyK-18/food-hub](https://github.com/SubbaReddyK-18/food-hub)  
 * **Live Deployment Link:** `[Insert Deployed URL Here - e.g., https://food-hub-three.vercel.app]`
+
+| S.No | Team Member Name | Registration Number | Role / Key Contribution |
+| :---: | :--- | :--- | :--- |
+| **1** | **D.L. Ganesh** | `241FA04A55` | Frontend UI Development & Routing |
+| **2** | **P. Anand Babu** | `241FA04A60` | Backend API & Controller Services |
+| **3** | **T. Kowsik** | `241FA04A65` | Database Schema & MongoDB Integration |
+| **4** | **K. Subba Reddy** | `241FA04B47` | Full-Stack Integration, Auth & Deployment |
 
 ---
 
@@ -231,8 +232,8 @@ npm start
 
 ## 📊 Project Presentation
 
-The required 10-slide project presentation is available in this repository:
-- 📑 **PowerPoint Presentation:** [`FoodHub_Project_Presentation.pptx`](./FoodHub_Project_Presentation.pptx)
+The required project presentation by **TEAM TISSOT** is available in this repository:
+- 📑 **PowerPoint Presentation:** [`FOOD HUB.pptx`](./FOOD%20HUB.pptx)
 - 🌐 **Interactive Web Slides:** [`FoodHub_Presentation.html`](./FoodHub_Presentation.html)
 
 **Slide Breakdown:**
